@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
+chrome_options.add_extension('src.crx')
 options = [
     "--headless",
     "--disable-gpu",
@@ -21,4 +22,8 @@ for option in options:
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('http://youtube.com')
+print(driver.title)
+driver.get('http://google.com')
+print(driver.title)
+driver.get('http://minecraft.net')
 print(driver.title)
