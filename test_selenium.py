@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from time import sleep
 
-chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
+chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
 chrome_options = Options()
 chrome_options.add_extension('src.crx')
@@ -25,6 +25,7 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('https://google.com')
 sleep(3)
+print(driver.title)
 driver.get('https://youtube.com')
 sleep(3)
 print(driver.title)
