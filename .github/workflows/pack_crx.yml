@@ -37,9 +37,10 @@ jobs:
         name: my-artifact-crx
         path: ${{ github.workspace }}/src.crx
         
-   # now test .crx
-    - name: Install chromium
-      run: sudo apt-get install -y chromium-browser
+    - name: Installed package list
+      run: apt list --installed
+    - name: Remove Chrome
+      run: sudo apt purge google-chrome-stable
     - name: Install packages
       run: pip install requests webdriver-manager selenium pytest
     - name: Run script
