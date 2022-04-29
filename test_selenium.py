@@ -24,4 +24,3 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('http://nytimes.com')
 print(driver.title)
-input('Press [Enter] To close browser')
